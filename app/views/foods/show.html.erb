@@ -1,0 +1,17 @@
+<section id="onefood">
+Glycemic Index: <%= @specific_food.glycemic_index %><br>
+  <% if @specific_food.glycemic_index <55 %>
+    <%="Low GI" %><br>
+    <%= image_tag "star.png", :width => 42, :height => 42 %>
+  <% elsif @specific_food.glycemic_index <70 %>
+    <%="Middle GI" %><br>
+  <% else %>
+   <%="High GI" %><br>
+   <%= image_tag "x.png", :width => 42, :height => 42 %>
+  <% end %>
+
+  <form method="post" action="/users/<%= @user.id %>/foods/<%= @specific_food.id %>">
+    <input type="hidden" name="_method" value="delete">
+    <input id="delete" type="submit" value="Delete">
+  </form>
+</section>

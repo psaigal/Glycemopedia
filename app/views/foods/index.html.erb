@@ -1,0 +1,13 @@
+<%= link_to 'Profile Page', user_path(current_user.id) %></td>
+<%  low= [] %>
+<%  middle= [] %>
+<%  high= [] %>
+
+<h1><%= current_user.name %>'s Food Journal</h1>
+
+<section id="addfoodtitle">
+<%= link_to 'Add New Food', new_user_food_path(current_user.id), :class => 'btn' %>
+</section>
+
+<section id="foods">
+</section>
