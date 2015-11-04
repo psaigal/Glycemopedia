@@ -4,9 +4,6 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  resources :users do
-    resources :foods
-  end
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
@@ -15,6 +12,11 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
+  resources :users do
+    resources :foods do
+      get :autocomplete_food_name, on: :collection
+    end
+  end
 
 
   # Example of regular route:

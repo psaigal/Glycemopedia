@@ -6,8 +6,18 @@
 <h1><%= current_user.name %>'s Food Journal</h1>
 
 <section id="addfoodtitle">
-<%= link_to 'Add New Food', new_user_food_path(current_user.id), :class => 'btn' %>
+<%= link_to 'Add New Food', new_user_food_path(current_user.id), :class => 'btn', remote: true %>
 </section>
 
+<div id="new-food-form"></div>
+
+<div id="new-foods" style="display:none;><%= render 'foods/new' %></div>
+
+
+<br>
+
 <section id="foods">
+<% current_user.foods.each do|food| %>
+  <%= link_to food.name %><br>
+<% end %>
 </section>
