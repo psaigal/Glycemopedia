@@ -1,11 +1,15 @@
-<h1>Welcome <%= current_user.name %></h1>
+<h1 class="page-heading">Welcome <%= current_user.name %></h1>
 
-<section id="home">
-<%= link_to 'View Your Daily Food Journal', user_foods_path(current_user.id) %><br>
-<%= link_to 'Edit', edit_user_path(current_user.id) %><br>
+<div id="main-container" class="container">
+  <div class="row">
+    <div id="content" class="col-xs-9">
+    <%= link_to 'View Your Daily Food Journal', user_foods_path(current_user.id), class: "link" %><span class="glyphicon glyphicon-cutlery"></span><br>
+    <%= link_to 'Edit', edit_user_path(current_user.id), class: "link" %><span class="glyphicon glyphicon-edit"></span><br>
 
- <form method="post" action="/users/<%= current_user.id %>">
-  <input type="hidden" name="_method" value="delete"><br>
-  <input id="delete" type="submit" value="Delete Account">
-</form>
-</section>
+    <%= link_to 'Delete Account', user_path(current_user.id),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' }, class: "link" %><span class="glyphicon glyphicon-remove"></span>
+      </div>
+  </div>
+</div>
+

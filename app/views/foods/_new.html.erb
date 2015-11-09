@@ -1,11 +1,10 @@
- <section id="newfooditem">
- <h3>Add New Food Item</h3>
-   <div class="text-center">
-    <div class="login-form-1">
-      <%= form_for :food, url: user_foods_path, remote: true do |f| %>
-      <%= f.autocomplete_field :food_name, autocomplete_food_name_user_foods_path %>
-      <%= f.submit "Add" %>
-    <% end %>
-    </div>
+<section id="newfooditem">
+ <div class="text-center">
+  <div class="login-form-1">
+    <%= form_for :food, url: user_foods_path do |f| %>
+    <%= f.autocomplete_field :food_name, autocomplete_food_name_user_foods_path %>
+    <%= f.submit "Add", :class => "submit" %>
+  <% end %>
   </div>
+</div>
 </section>

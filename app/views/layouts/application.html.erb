@@ -5,15 +5,19 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,400italic,300,300italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<div class="navbar">
 <% if current_user %>
-  Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
-<% else %>
-  <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+  Signed in as <%= current_user.name %> | <%= link_to "Profile", user_path(current_user.id) %> | <%= link_to "Logout", '/logout' %>
 <% end %>
+</div>
 
-<%= yield %>
+
+          <%= yield %>
+
+
 
 </body>
 </html>
