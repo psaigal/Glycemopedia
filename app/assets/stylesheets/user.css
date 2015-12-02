@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+* {
+  outline:1px solid red;
+}
+
 #front {
   background: url(background.jpeg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -19,6 +23,14 @@
   text-align:center;
 }
 
+
+#date {
+  color:#0431B4;
+  font-size: 30px;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align:center;
+}
+
 p {
   text-shadow: 2px 2px #000000;
   color:white;
@@ -31,7 +43,7 @@ p {
 .page-heading {
   font-family: 'Josefin Sans', sans-serif;
   text-align: center;
-  font-size: 70px;
+  font-size: 55px;
   padding-top: 20px;
   color:#348017;
 }
@@ -50,7 +62,7 @@ p {
 }
 
 .link {
-  font-size: 40px;
+  font-size: 30px;
   font-family: 'Josefin Sans', sans-serif;
   color: #0431B4;
   padding-top:30px;
@@ -89,7 +101,7 @@ span.glyphicon {
 
 .col-xs-9{
   position:relative;
-  margin-left:15%;
+  margin-left:10%;
   margin-right:25%;
   margin-top: 2%;
   margin-bottom: 5%;
@@ -105,7 +117,7 @@ span.glyphicon {
 
 
 .food-link {
-  font-size: 45px;
+  font-size: 30px;
   font-family: 'Josefin Sans', sans-serif;
   color: #ffffff;
   text-decoration: none;
@@ -113,11 +125,11 @@ span.glyphicon {
   border-width: 3px;
   border-radius: 15px;
   background-color:#DF7401;
-  padding:20px;
+  padding:15px;
 }
 
 .food-link:hover {
-  font-size: 45px;
+  font-size: 30px;
   font-family: 'Josefin Sans', sans-serif;
   color: #ffffff;
   text-decoration: none;
@@ -128,7 +140,7 @@ span.glyphicon {
 }
 
 .food-link:visited {
-  font-size: 45px;
+  font-size: 30px;
   font-family: 'Josefin Sans', sans-serif;
   color: #ffffff;
   text-decoration: none;
@@ -139,7 +151,7 @@ span.glyphicon {
 }
 
 .food-link:active {
-  font-size: 45px;
+  font-size: 30px;
   font-family: 'Josefin Sans', sans-serif;
   color: #ffffff;
   text-decoration: none;
@@ -167,11 +179,13 @@ span.glyphicon {
 #food_food_name{
   border-radius:15px;
   width: 300px;
-  height: 50px;
+  height: 30px;
   border-style: solid;
   border-width: 1px;
   border-color:#348017;
   margin-bottom:25px;
+  margin-left:40px;
+  padding:10px;
 }
 
 .submit{
@@ -186,7 +200,7 @@ span.glyphicon {
   border-width: 1px;
   border-color:white;
   background-color:#348017;
-  font-size: 30px;
+  font-size: 25px;
   font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -224,3 +238,25 @@ span.glyphicon {
   margin-left:40%;
   margin-right:40%
 }
+
+#big-headers{
+  color:#0431B4;
+  font-size: 50px;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align:center;
+}
+
+#smaller-header{
+  color:#DF7401;
+  margin-top: 10%;
+  font-size: 50px;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align:center;
+}
+
+text {
+  color:#0431B4;
+  font-size: 20px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+

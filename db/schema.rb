@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20151030022012) do
   create_table "users_foods", force: :cascade do |t|
     t.integer  "food_id"
     t.integer  "user_id"
+    t.date     "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

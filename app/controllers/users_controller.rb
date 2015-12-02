@@ -39,6 +39,9 @@ class UsersController < ApplicationController
     redirect_to '/'
   end
 
+  def graphs
+  end
+
 private
 
   def user_params

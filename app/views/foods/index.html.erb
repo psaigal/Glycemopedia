@@ -3,8 +3,9 @@
 <%  middle= [] %>
 <%  high= [] %>
 
-<h1 class="page-heading"><%= current_user.name %>'s Food Journal<%= image_tag "journal.png", :width => 150, :height => 150 %></h1>
+<h1 class="page-heading"><%= current_user.name %>'s Food Journal<%= image_tag "journal.png", :width => 120, :height => 120 %></h1>
 
+<h2 id="date"><%= Time.now.strftime("%A, %B %e, %Y") %></h2>
 
 <div id="main-container" class="container">
   <div class="row">

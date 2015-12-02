@@ -10,9 +10,8 @@ Glycemic Index: <%= @specific_food.glycemic_index %><br>
    <%= image_tag "x.png", :width => 42, :height => 42 %>
   <% end %>
 
-  <%= link_to 'Delete Food', "/users/#{current_user.id}/foods/#{@specific_food.id}",
-              method: :delete
-              %>
+  <%= link_to 'Delete Food', "/users/#{current_user.id}/foods/#{@specific_food.id}", method: :delete %>
 </section>
 
 
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
