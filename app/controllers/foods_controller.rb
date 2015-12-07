@@ -14,7 +14,7 @@ class FoodsController < ApplicationController
     food_attr = params.require(:food).permit(:food_name)
     p food_attr[:food_name]
     @food = Food.find_by(name: food_attr[:food_name])
-    @new_entry = UsersFood.create(user_id: current_user.id, food_id: @food.id, date: Time.now.strftime("%A, %B %e %Y"))
+    @new_entry = UsersFood.create(user_id: current_user.id, food_id: @food.id)
     redirect_to "/users/#{current_user.id}/foods"
   end
 
