@@ -1,0 +1,30 @@
+<%= link_to 'Glycemic Index Breakdown', "/users/#{current_user.id}/entries/#{@entry.id}/graphs", class: "gi_breakdown" %><br>
+<%  low= [] %>
+<%  middle= [] %>
+<%  high= [] %>
+
+<h1 class="page-heading"><%= current_user.name %>'s Food Journal<%= image_tag "journal.png", :width => 120, :height => 120 %></h1>
+
+<h2 id="date"><%= @entry.created_on.strftime("%A, %B %d, %Y") %></h2>
+
+<div id="main-container" class="container">
+  <div class="row">
+    <div id="content" class="col-xs-9">
+    <section id="add-food-title">
+    <%= link_to 'Add New Food', "/users/#{current_user.id}/entries/#{@entry.id}/foods/new", :class => 'food-link', remote: true %>
+
+    </section>
+
+    <div id="new-food" style="display:none;"></div>
+    <section id="foods">
+    <% @entry.foods.each do|food| %>
+      <%= link_to food.name,"/users/#{current_user.id}/entries/#{@entry.id}/foods/#{food.id}", remote: true, :class => 'link' %>
+      <div id="show-food-<%= food.id %>" style="display:none;"></div>
+      <br>
+      <br>
+    <% end %>
+    </section>
+    </div>
+  </div>
+</div>
+

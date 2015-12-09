@@ -1,0 +1,25 @@
+<h2 id="big-headers">Glycemic Index Breakdown</h2>
+
+<% high = [] %>
+<% medium = [] %>
+<% low = [] %>
+
+<% @entry.foods.each do |food| %>
+  <% if food.glycemic_index <55 %>
+    <% low.push(food) %>
+  <% elsif food.glycemic_index <70 %>
+    <% medium.push(food) %>
+  <% else %>
+   <% high.push(food) %>
+  <% end %>
+<% end %>
+
+<%= javascript_include_tag "https://www.google.com/jsapi", "chartkick" %>
+
+<% if @entry.foods.length == 0 %>
+  <h2 id="smaller-header">Start Eating! <span class="glyphicon glyphicon-cutlery", style="font-size: 50px; color:white"></span>
+  <p id="small-text">There are currently no foods in your food journal</p></h2>
+<% else %>
+  <%= pie_chart [["High Glycemic Index", high.length], ["Middle Glycemic Index", medium.length], ["Low Glycemic Index", low.length]] %>
+<% end %>
+

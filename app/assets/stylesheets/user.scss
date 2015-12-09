@@ -2,8 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 * {
   outline:0px solid red;
+}
+
+a:-webkit-any-link{
+  text-decoration:none !important;
+  color:none !important;
 }
 
 #front {
@@ -26,7 +32,7 @@
 
 #date {
   color:#0431B4;
-  font-size: 30px;
+  font-size: 25px;
   font-family: 'Josefin Sans', sans-serif;
   text-align:center;
 }
@@ -66,16 +72,20 @@ p {
   font-family: 'Josefin Sans', sans-serif;
   color: #0431B4;
   padding-top:30px;
+  background: none;
+  border: 0;
 }
 
 .link:hover {
     color: #0174DF;
     text-decoration: none;
+    background: none;
 }
 
 .link:active {
     color: #0174DF;
     text-decoration: none;
+    background: none;
 }
 
 
@@ -247,16 +257,30 @@ span.glyphicon {
 }
 
 #smaller-header{
-  color:#DF7401;
+  color:white;
   margin-top: 10%;
   font-size: 50px;
   font-family: 'Josefin Sans', sans-serif;
   text-align:center;
+  background-color: #DF7401;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding-bottom:25px;
+  padding-top:15px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius:15px;
 }
 
 text {
   color:#0431B4;
   font-size: 20px;
   font-family: 'Josefin Sans', sans-serif;
+}
+
+#small-text {
+  font-size:35px;
+  text-shadow:none;
 }
 

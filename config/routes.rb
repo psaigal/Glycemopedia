@@ -13,9 +13,12 @@ Rails.application.routes.draw do
   post '/users' => 'users#create'
 
   resources :users do
-    get 'graphs'
-    resources :foods do
-      get :autocomplete_food_name, on: :collection
+    get 'total_graph'
+    resources :entries do
+      get 'graphs'
+      resources :foods do
+        get :autocomplete_food_name, on: :collection
+      end
     end
   end
 

@@ -17,8 +17,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    p "*" * 90
-    p "HITTING UPDATE!!!!!"
     @user = User.find(params[:id])
     p @user
     if @user.update(user_params)
@@ -39,7 +37,8 @@ class UsersController < ApplicationController
     redirect_to '/'
   end
 
-  def graphs
+  def total_graphs
+    @entry = Entry.find_by(id:params[:entry_id])
   end
 
 private

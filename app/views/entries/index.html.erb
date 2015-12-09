@@ -1,0 +1,22 @@
+<h1 class="page-heading">Past Food Journal Entries</h1>
+
+<% if current_user.entries.length == 0 %>
+  <h2 id="smaller-header">Start Eating! <span class="glyphicon glyphicon-cutlery", style="font-size: 50px; color:white"></span>
+  <p id="small-text">There are currently no entries in your food journal</p></h2>
+<% else %>
+<div id="content" class="col-xs-9">
+  <% current_user.entries.each do |entry| %>
+    <%= link_to entry.created_on.strftime("%A, %B %d, %Y"), "/users/#{current_user.id}/entries/#{entry.id}", class: "link" %><br>
+
+    <%= link_to 'Delete Entry', "/users/#{current_user.id}/entries/#{entry.id}",
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' }, class: "delete-link" %><span class="glyphicon delete glyphicon-remove"></span><br>
+
+  <% end %>
+<% end %>
+</div>
+
+
+
+
+

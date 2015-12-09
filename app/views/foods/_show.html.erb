@@ -2,12 +2,12 @@
 Glycemic Index: <%= @specific_food.glycemic_index %><br>
   <% if @specific_food.glycemic_index <55 %>
     <%="Low GI" %><br>
-    <%= image_tag "star.png", :width => 42, :height => 42 %>
+    <%= image_tag "star.png", :width => 42, :height => 42 %><br>
   <% elsif @specific_food.glycemic_index <70 %>
     <%="Middle GI" %><br>
   <% else %>
    <%="High GI" %><br>
-   <%= image_tag "x.png", :width => 42, :height => 42 %>
+   <%= image_tag "x.png", :width => 42, :height => 42 %><br>
   <% end %>
 
   <%= link_to 'Delete Food', "/users/#{current_user.id}/foods/#{@specific_food.id}", method: :delete %>

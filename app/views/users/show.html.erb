@@ -3,9 +3,18 @@
 <div id="main-container" class="container">
   <div class="row">
     <div id="content" class="col-xs-9">
-    <%= link_to 'View Your Daily Food Journal', user_foods_path(current_user.id), class: "link" %><span class="glyphicon glyphicon-cutlery"></span><br>
-    <%= link_to 'Glycemic Index Breakdown', "/users/#{current_user.id}/graphs", class: "link" %><span class="glyphicon glyphicon-signal"></span><br>
-    <%= link_to 'Edit', edit_user_path(current_user.id), class: "link" %><span class="glyphicon glyphicon-edit"></span><br>
+
+    <%= form_for :entry, url: user_entries_path(current_user.id) do |f| %>
+    <%= f.submit "Today's Food Journal", class: "link"%>
+    <span class="glyphicon glyphicon-cutlery"></span>
+    <% end %><br>
+
+
+    <%= link_to 'View Past Food Journal Entries', user_entries_path(current_user.id), class: "link" %><span class="glyphicon glyphicon-search"></span><br>
+
+    <%= link_to 'Total Glycemic Index Breakdown', user_total_graph_path(current_user.id), class: "link" %><span class="glyphicon glyphicon-signal"></span><br>
+
+    <%= link_to 'Edit Account', edit_user_path(current_user.id), class: "link" %><span class="glyphicon glyphicon-edit"></span><br>
 
     <%= link_to 'Delete Account', user_path(current_user.id),
                   method: :delete,

@@ -3,6 +3,7 @@ class CreateFoods < ActiveRecord::Migration
     create_table :foods do |t|
       t.string :name
       t.integer :glycemic_index
+      t.references :entry
 
       t.timestamps null: false
     end
